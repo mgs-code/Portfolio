@@ -24,27 +24,7 @@
     }
   </style>
 </head>
-<script>
-  const viewer = document.querySelector("model-viewer");
 
-  viewer.addEventListener("load", () => {
-    const materials = viewer.model.materials;
-
-    const darkGrey = [0.2, 0.2, 0.2, 1];
-
-    materials.forEach((material) => {
-      // set base color
-      material.pbrMetallicRoughness.setBaseColorFactor(darkGrey);
-
-      // make it matte plastic
-      material.pbrMetallicRoughness.setMetallicFactor(0.0);
-      material.pbrMetallicRoughness.setRoughnessFactor(0.8);
-
-      // IMPORTANT: remove textures that override color
-      material.pbrMetallicRoughness.baseColorTexture = null;
-    });
-  });
-</script>
 <body>
 
 <model-viewer
