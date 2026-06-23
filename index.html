@@ -10,12 +10,12 @@
 </head>
 <body style="margin:0;">
 
-  <model-viewer
-    src="Cellphone_Stand.glb"
-    camera-controls
-    auto-rotate
-    style="width:100vw;height:100vh;">
-  </model-viewer>
+  <model-viewer src="Cellphone_Stand.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" environment-image="legacy" camera-orbit="-362deg 179.3deg 0.2114m" field-of-view="30deg" orientation="0deg 270deg 0deg">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+</model-viewer>
+
 
 </body>
 </html>
