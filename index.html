@@ -19,15 +19,29 @@
   poster="poster.webp"
   shadow-intensity="1"
   environment-image="legacy"
-  camera-orbit="auto auto auto"
+  camera-orbit="-362deg 179.3deg 0.2114m"
   field-of-view="30deg"
-  orientation="0deg 0deg 0deg"
+  orientation="0deg 270deg 0deg"
 >
   <div class="progress-bar hide" slot="progress-bar">
     <div class="update-bar"></div>
   </div>
 </model-viewer>
 
+<script>
+  const viewer = document.querySelector("model-viewer");
+
+  viewer.addEventListener("load", () => {
+    const material = viewer.model.materials[0];
+
+    // light pink color
+    material.pbrMetallicRoughness.setBaseColorFactor([0.97, 0.71, 0.78, 1]);
+
+    // slightly rough (3D printed plastic feel)
+    material.pbrMetallicRoughness.setMetallicFactor(0.0);
+    material.pbrMetallicRoughness.setRoughnessFactor(0.75);
+  });
+</script>
 
 </body>
 </html>
