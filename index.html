@@ -24,7 +24,20 @@
     }
   </style>
 </head>
+<script>
+  const viewer = document.querySelector("model-viewer");
 
+  viewer.addEventListener("load", () => {
+    const material = viewer.model.materials[0];
+
+    // Dark grey color
+    material.pbrMetallicRoughness.setBaseColorFactor([0.2, 0.2, 0.2, 1]);
+
+    // Plastic-like finish (optional but recommended)
+    material.pbrMetallicRoughness.setMetallicFactor(0.0);
+    material.pbrMetallicRoughness.setRoughnessFactor(0.7);
+  });
+</script>
 <body>
 
 <model-viewer
